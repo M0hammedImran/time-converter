@@ -4,19 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="style.css">
   <title>Time Converter</title>
 </head>
 
 <body>
 
-  <div>
-    <label for="hour">Time</label>
-    <input type="tel" required pattern="[0-5]{1,2}" id="hour" name="hour">
-    <input type="tel" required pattern="[0-5]{1,2}" id="min" name="min">
-    <input type="tel" required pattern="[0-5]{1,2}" id="sec" name="sec">
-    <button onclick="timeConverter()">Submit</button>
+  <div class="main">
+    <header>
+      <h1> Time</h1>
+    </header>
+    <div class="input">
+      <div class="hour">
+        <label for="hour">Hour</label>
+        <input type="number" placeholder="Hour" required pattern="[0-5]{1,2}" id="hour" name="hour">
+      </div>
+      <div class="min">
+        <label for="min">Min</label>
+        <input type="number" placeholder="Minute" required pattern="[0-5]{1,2}" id="min" name="min">
+      </div>
+      <div class="sec">
+        <label for="sec">Sec</label>
+        <input type="number" placeholder="Second" required pattern="[0-5]{1,2}" id="sec" name="sec">
+      </div>
+      <div class="period">
+        <label for="period">Period</label>
+        <select id="period" name="period">
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+    </div>
+    <div class="btnerr">
+      <button class="btn">Submit</button>
+
+      <p class="errMessageH"></p>
+      <p class="errMessageM"></p>
+      <p class="errMessageS"></p>
+      <input placeholder="Output" readonly type="text" id="output">
+    </div>
+
   </div>
+
+  <script src="./app.js"></script>
 
 </body>
 
